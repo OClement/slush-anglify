@@ -5,14 +5,7 @@ var bower = require('gulp-bower'),
   clean = require('gulp-clean');
 
 module.exports = (function() {
-  /**
-   * Gulp bower-install task which pulls down the bower third-party dependencies and places them into the lib directory
-   */
-  gulp.task('bower-install', function() {
-    return bower()
-      .pipe(gulp.dest('./lib/'));
-  });
-
+  
   /**
    * Gulp bower-clean task cleans temporary bower components directory
    */

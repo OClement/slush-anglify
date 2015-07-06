@@ -13,7 +13,7 @@ global.LIB = "lib";
 global.config = {
   paths: {
     index: "/index.html",
-    sass: APP_FOLDER + "/sass/app.scss",
+    less: APP_FOLDER + "/less/app.less",
     styles: SERVE_FOLDER + "/" + ASSETS_FOLDER + "/css",
     scripts: SERVE_FOLDER + "/" + ASSETS_FOLDER + "/js"
   },

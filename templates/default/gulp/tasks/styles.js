@@ -1,19 +1,19 @@
 "use strict";
 
-var sass = require('gulp-sass'),
+var less = require('gulp-less'),
   runSequence = require('run-sequence'),
   concat = require('gulp-concat');
 
 module.exports = (function() {
   /**
-   * Gulp sass. Compiles sass into CSS and bundles it for distribution
+   * Gulp Less. Compiles less into CSS and bundles it for distribution
    */
-  gulp.task('sass', function() {
+  gulp.task('less', function() {
     gulp.src([
-        './lib/bootstrap-sass-official/assets/stylesheets/bootstrap.scss',
-        './app/sass/*.scss'
+        './node_modules/bootstrap/less/bootstrap.less',
+        './app/less/*.less'
       ])
-      .pipe(sass())
+      .pipe(less())
       .pipe(concat('app.css'))
       .pipe(gulp.dest('./dist/css'));
   });
@@ -22,11 +22,11 @@ module.exports = (function() {
    * Gulp task to watch templates
    */
   gulp.task('watchStyles', function(cb) {
-    runSequence(['sass'], 'serve-assets', cb);
+    runSequence(['less'], 'serve-assets', cb);
   });
 
   /*
    * Setup watch for templates
    */
-  gulp.watch('./app/sass/**/*.scss', ['watchStyles']);
+  gulp.watch('./app/less/**/*.less', ['watchStyles']);
 })();
